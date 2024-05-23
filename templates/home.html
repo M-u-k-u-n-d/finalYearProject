@@ -126,12 +126,12 @@
         }
         .moving-text {
             white-space: nowrap; /* Prevent text from wrapping */
-            animation: moveText 5s linear infinite; /* Adjust duration as needed */
+            animation: moveText 10s linear infinite; /* Adjust duration as needed */
         }
         /* Keyframes for moving text animation */
         @keyframes moveText {
             0% {
-                transform: translateX(-100%); /* Start off-screen to the left */
+                transform: translateX(0%); /* Start off-screen to the left */
             }
             100% {
                 transform: translateX(100%); /* Move off-screen to the right */
@@ -194,10 +194,16 @@
             font-size: 14px;
             color: #333;
         }
+
+        .logo{
+            height: 8vh;
+            border-radius: 100%;
+        }
     </style>
 </head>
 <body>
    <div class="header">
+    <img class="logo" src="https://www.creativefabrica.com/wp-content/uploads/2021/10/05/CV-logo-design-vector-Graphics-18355680-1-580x386.jpg" alt="logo"/>
     <nav>
         <ul class="menu">
             <li><a href="/home">Home</a></li>
@@ -225,7 +231,7 @@
 {% endif %}
 <div class="container">
     <div class="image-caption">
-        <h2>Image Captioner</h2>
+        <h2>Cogni View</h2>
         <br>
         <!-- Upload icon -->
         <span class="custom-icon" onclick="openFileInput(event)">
@@ -243,7 +249,8 @@
     <div class="drop-box" id="dropBox" onclick="openFileInput(event)" ondragover="allowDrop(event)" ondrop="dropImage(event)">
         <p>Drag & Drop images here or click to upload</p>
         <input type="file" id="fileInput" style="display: none;">
-        <img id="imagePreview" class="image-preview" src="" alt="Image Preview">
+
+        <img id="imagePreview" class="image-preview" src="" alt="">
     </div>
     <div class="generate-button-container">
         <button type="button" class="generate-button" onclick="generateCaption(event)">Generate Caption</button>
